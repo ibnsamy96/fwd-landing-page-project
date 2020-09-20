@@ -1,0 +1,151 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Ubuntu", sans-serif;
+}
+
+html,
+body {
+  height: 100%;
+  background-color: red;
+}
+
+#navbarToggle {
+  position: fixed;
+  top: 0px;
+  right: 10px;
+  /* font-size: 1.5rem; */
+  width: 2rem;
+  height: 2rem;
+  padding-bottom: 0.5rem;
+  padding-top: 0.5rem;
+  z-index: 10;
+}
+
+#navbar {
+  text-align: center;
+  background-color: rgba(25, 255, 255, 0.6);
+  color: #191919;
+  /* width: 100%; */
+  font-size: 1.2rem;
+  /* height: auto; */
+  padding-bottom: 0.5rem;
+  padding-top: 0.5rem;
+  display: none;
+  padding-right: 46px;
+  flex-direction: row;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 5;
+  /* font-weight: bold; */
+}
+
+#navbar * {
+  border-radius: 5px;
+}
+
+#navbar button {
+  /* flex-direction: ; */
+  background-color: #202020;
+  color: #ffffff;
+  text-align: center;
+  border: none;
+  min-width: 2.5rem;
+  font-size: 0.9rem;
+  padding-right: 8px;
+  padding-left: 8px;
+  margin-right: 4px;
+  margin-left: 4px;
+}
+
+#navbar ul li {
+  display: inline-block;
+  list-style-type: none;
+}
+
+#navbar ul .active {
+  background-color: yellow;
+}
+
+#navbar ul li a {
+  text-decoration: none;
+  color: blueviolet;
+  background-color: whitesmoke;
+  margin-right: 4px;
+  margin-left: 4px;
+  padding-right: 8px;
+  padding-left: 8px;
+}
+
+#navbar ul li a[href="#header"] {
+  background-color: blueviolet;
+  color: whitesmoke;
+}
+
+.decollapseIcon {
+  display: inline-block;
+}
+.collapseIcon {
+  display: none;
+}
+
+section {
+  background-color: red;
+  border-top: #202020 5px solid;
+  border-bottom: #202020 5px solid;
+  padding-top: 20%;
+  padding-bottom: 20%;
+  padding-left: 60px;
+  padding-right: 60px;
+  text-align: center;
+  /* height: calc(100vh - 50px); */
+}
+section:first-of-type {
+  /* margin-top: 1.9rem; */
+  background-color: blue;
+}
+
+section p {
+  display: block;
+}
+
+@media screen and (max-width: 768px) {
+  #navbar ul li,
+  #navbar ul li a {
+    display: block;
+    width: 100%;
+  }
+  #navbar ul li a {
+    padding: 15px 8px;
+    margin-bottom: 4px;
+  }
+
+  #navbar {
+    flex-direction: column;
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 100%;
+  }
+
+  #navbar button {
+    display: block;
+    padding: 15px 8px;
+  }
+
+  section:first-of-type {
+    /* margin-top: 10rem; */
+  }
+  section {
+    /* padding-top: 100px;
+    padding-bottom: 100px; */
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+@media screen and (max-width: 283px) {
+  section:first-of-type {
+    /* margin-top: 13rem; */
+  }
+}
