@@ -82,10 +82,10 @@ body {
   padding-left: 8px;
 }
 
-#navbar ul:first-child a {
+/* #navbar ul li:first-child a {
   background-color: blueviolet;
   color: whitesmoke;
-}
+} */
 
 .decollapseIcon {
   display: inline-block;

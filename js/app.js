@@ -1,31 +1,23 @@
 let siteSections = document.querySelectorAll("section");
-let sectionInViewPort;
+// let sectionInViewPort;
 
 window.addEventListener("scroll", function () {
   siteSections = document.querySelectorAll("section");
 
   for (section of siteSections) {
     const sectionRect = section.getBoundingClientRect();
+    const sectionAnchorElement = document.querySelector(
+      `a[href='#${section.id}']`
+    );
     if (
       sectionRect.top <=
         (window.innerHeight / 2 || document.documentElement.clientHeight / 2) &&
       sectionRect.bottom >=
         (window.innerHeight / 2 || document.documentElement.clientHeight / 2)
     ) {
-      if (section.id !== sectionInViewPort) {
-        // active link status
-        sectionInViewPort = section.id;
-        const sectionLink = document.querySelector(`a[href='#${section.id}']`);
-        // sectionLink.style.backgroundColor = "blueviolet";
-        // sectionLink.style.color = "whitesmoke";
-        sectionLink.classList.add("active");
-      }
+      sectionAnchorElement.classList.add("active");
     } else {
-      // not active link status
-      const sectionLink = document.querySelector(`a[href='#${section.id}']`);
-      // sectionLink.style.backgroundColor = "whitesmoke";
-      // sectionLink.style.color = "blueviolet";
-      sectionLink.classList.remove("active");
+      sectionAnchorElement.classList.remove("active");
     }
   }
 });
