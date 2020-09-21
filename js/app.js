@@ -45,7 +45,7 @@ function addSectionToNav(sectionTitle) {
   navMenu.appendChild(newMenuItem);
 }
 
-const submitNewElement = () => {
+const submitNewSection = () => {
   // function that fires after clicking on 'add section' button and handle that process
 
   const sectionTitle = prompt("Choose section title");
