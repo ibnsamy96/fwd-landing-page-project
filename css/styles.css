@@ -11,6 +11,7 @@ body {
 }
 
 #navbarToggle {
+  background-color: chocolate;
   position: fixed;
   top: 0px;
   right: 10px;
@@ -19,6 +20,8 @@ body {
   height: 2rem;
   padding-bottom: 0.5rem;
   padding-top: 0.5rem;
+  padding-right: 0.3rem;
+  padding-left: 0.3rem;
   z-index: 10;
 }
 
@@ -31,7 +34,7 @@ body {
   /* height: auto; */
   padding-bottom: 0.5rem;
   padding-top: 0.5rem;
-  display: none;
+  display: flex;
   padding-right: 46px;
   flex-direction: row;
   position: fixed;
@@ -64,8 +67,9 @@ body {
   list-style-type: none;
 }
 
-#navbar ul .active {
-  background-color: yellow;
+#navbar ul li .active {
+  background-color: blueviolet !important;
+  color: whitesmoke !important;
 }
 
 #navbar ul li a {
@@ -78,7 +82,7 @@ body {
   padding-left: 8px;
 }
 
-#navbar ul li a[href="#header"] {
+#navbar ul:first-child a {
   background-color: blueviolet;
   color: whitesmoke;
 }

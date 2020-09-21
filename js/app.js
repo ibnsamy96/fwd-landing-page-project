@@ -5,7 +5,7 @@ window.addEventListener("scroll", function () {
   siteSections = document.querySelectorAll("section");
 
   for (section of siteSections) {
-    var sectionRect = section.getBoundingClientRect();
+    const sectionRect = section.getBoundingClientRect();
     if (
       sectionRect.top <=
         (window.innerHeight / 2 || document.documentElement.clientHeight / 2) &&
@@ -13,15 +13,19 @@ window.addEventListener("scroll", function () {
         (window.innerHeight / 2 || document.documentElement.clientHeight / 2)
     ) {
       if (section.id !== sectionInViewPort) {
+        // active link status
         sectionInViewPort = section.id;
         const sectionLink = document.querySelector(`a[href='#${section.id}']`);
-        sectionLink.style.backgroundColor = "blueviolet";
-        sectionLink.style.color = "whitesmoke";
+        // sectionLink.style.backgroundColor = "blueviolet";
+        // sectionLink.style.color = "whitesmoke";
+        sectionLink.classList.add("active");
       }
     } else {
+      // not active link status
       const sectionLink = document.querySelector(`a[href='#${section.id}']`);
-      sectionLink.style.backgroundColor = "whitesmoke";
-      sectionLink.style.color = "blueviolet";
+      // sectionLink.style.backgroundColor = "whitesmoke";
+      // sectionLink.style.color = "blueviolet";
+      sectionLink.classList.remove("active");
     }
   }
 });
@@ -130,17 +134,21 @@ const fromLocalStorage = () => {
 
 handleRetrieve();
 
-const toggleNav = () => {
-  var navbar = document.getElementById("navbar");
-  var navbarToggle = document.getElementById("navbarToggle");
+const navbar = document.getElementById("navbar");
+navbar.style.display = "flex";
 
-  if (navbar.style.display === "none" || navbar.style.display === "") {
+const toggleNav = () => {
+  // var navbarToggle = document.getElementById("navbarToggle");
+
+  if (navbar.style.display === "flex") {
     console.log("if");
-    navbar.style.display = "flex";
+    console.log(navbar.style.display);
+    navbar.style.display = "none";
+    console.log(navbar.style.display);
     // navbarToggle.style.display = "none";
   } else {
     console.log("else");
-    navbar.style.display = "none";
+    navbar.style.display = "flex";
     // navbarToggle.style.display = "block";
   }
 };
