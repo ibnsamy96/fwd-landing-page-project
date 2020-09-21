@@ -145,19 +145,10 @@ section p {
     padding: 15px 8px;
   }
 
-  section:first-of-type {
-    /* margin-top: 10rem; */
-  }
   section {
     /* padding-top: 100px;
     padding-bottom: 100px; */
     padding-left: 10px;
     padding-right: 10px;
-  }
-}
-
-@media screen and (max-width: 283px) {
-  section:first-of-type {
-    /* margin-top: 13rem; */
   }
 }

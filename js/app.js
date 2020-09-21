@@ -87,6 +87,8 @@ const scrollToSection = (clickedAnchor) => {
     `section[data-nav='${sectionDataNav}']`
   );
 
+  collapseSection(neededSection.id, "open");
+
   neededSection.scrollIntoView({ behavior: "smooth" });
 };
 
@@ -236,14 +238,15 @@ function generateEyeSVG(sectionID) {
   return svgCode;
 }
 
-const collapseSection = (sectionID) => {
+const collapseSection = (sectionID, ...params) => {
+  console.log(params);
   section = document.getElementById(sectionID);
   sectionParagraph = document.querySelector("#" + sectionID + " p");
   decollapseIcon = document.querySelector("#" + sectionID + " .decollapseIcon");
   collapseIcon = document.querySelector("#" + sectionID + " .collapseIcon");
   console.log(sectionParagraph);
 
-  if (sectionParagraph.style.display !== "none") {
+  if (sectionParagraph.style.display !== "none" && !params[0]) {
     console.log("fired");
     section.style.paddingTop = "20px";
     section.style.paddingBottom = "20px";
