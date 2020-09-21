@@ -7,7 +7,7 @@ window.addEventListener("scroll", function () {
   for (section of siteSections) {
     const sectionRect = section.getBoundingClientRect();
     const sectionAnchorElement = document.querySelector(
-      `a[href='#${section.id}']`
+      `a[id='${section.dataset.nav}-link']`
     );
     if (
       sectionRect.top <=
@@ -63,7 +63,7 @@ function addSectionToNav(sectionTitle, sectionID) {
   const navMenu = document.querySelector("nav ul");
   const newMenuItem = document.createElement("li");
   // newMenuItem;
-  newMenuItem.innerHTML = `<a  href='#${sectionID}' onclick = "toggleNav()">${sectionTitle.toUpperCase()}</a>`;
+  newMenuItem.innerHTML = `<a  id='${sectionTitle}-link' onclick = "scrollToSection(this)">${sectionTitle.toUpperCase()}</a>`;
   console.log(navMenu);
   console.log(newMenuItem);
   navMenu.appendChild(newMenuItem);
@@ -79,6 +79,16 @@ function addSectionToBody(sectionTitle, sectionID, sectionContent) {
   )} ${sectionTitle}</h1><p>${sectionContent}</p>`;
   document.body.appendChild(newSection);
 }
+
+const scrollToSection = (clickedAnchor) => {
+  const sectionDataNav = clickedAnchor.id.split("-link")[0];
+
+  const neededSection = document.querySelector(
+    `section[data-nav='${sectionDataNav}']`
+  );
+
+  neededSection.scrollIntoView({ behavior: "smooth" });
+};
 
 const handleStoring = (sectionTitle, sectionID, sectionContent) => {
   newSections.push(
