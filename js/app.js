@@ -1,5 +1,6 @@
 let siteSections = document.querySelectorAll("section");
-// let sectionInViewPort;
+
+// document.querySelector(`a[id='header-link']`).classList.add("active");
 
 window.addEventListener("scroll", function () {
   siteSections = document.querySelectorAll("section");
@@ -30,6 +31,8 @@ for (section of siteSections) {
   console.log(section.dataset.nav);
   addSectionToNav(section.dataset.nav, section.id);
 }
+
+document.querySelector(`a[id='header-link']`).classList.add("active");
 
 const submitNewElement = () => {
   const sectionTitle = prompt("Choose section title");
