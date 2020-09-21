@@ -1,7 +1,5 @@
 let siteSections = document.querySelectorAll("section");
 
-// document.querySelector(`a[id='header-link']`).classList.add("active");
-
 window.addEventListener("scroll", function () {
   siteSections = document.querySelectorAll("section");
 
@@ -65,7 +63,6 @@ const submitNewElement = () => {
 function addSectionToNav(sectionTitle, sectionID) {
   const navMenu = document.querySelector("nav ul");
   const newMenuItem = document.createElement("li");
-  // newMenuItem;
   newMenuItem.innerHTML = `<a  id='${sectionTitle}-link' onclick = "scrollToSection(this)">${sectionTitle.toUpperCase()}</a>`;
   console.log(navMenu);
   console.log(newMenuItem);
@@ -145,18 +142,14 @@ const navbar = document.getElementById("navbar");
 navbar.style.display = "flex";
 
 const toggleNav = () => {
-  // var navbarToggle = document.getElementById("navbarToggle");
-
   if (navbar.style.display === "flex") {
     console.log("if");
     console.log(navbar.style.display);
     navbar.style.display = "none";
     console.log(navbar.style.display);
-    // navbarToggle.style.display = "none";
   } else {
     console.log("else");
     navbar.style.display = "flex";
-    // navbarToggle.style.display = "block";
   }
 };
 
